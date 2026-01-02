@@ -1,7 +1,3 @@
-📘 Backend README
-
-Repository: assignment-workflow-portal-backend
-
 📌 Project Overview
 
 This repository contains the backend of the Assignment Workflow Portal, built using Node.js, Express.js, and MongoDB.
