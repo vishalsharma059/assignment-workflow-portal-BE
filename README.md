@@ -1,111 +1,116 @@
-📌 Project Overview
+# 📘 Assignment Workflow Portal – Backend
 
-This repository contains the backend of the Assignment Workflow Portal, built using Node.js, Express.js, and MongoDB.
+A workflow-driven backend built with **Node.js, Express.js, and MongoDB**, designed to handle authentication, role-based access control, and assignment lifecycle management for teachers and students.
 
-The backend handles:
+---
 
-User authentication (Teacher & Student)
+## 🚀 Project Overview
 
-Role-based access control
+This repository contains the **backend service** of the Assignment Workflow Portal.
 
-Assignment lifecycle management (Draft → Published → Completed)
+The backend is responsible for handling **secure authentication**, **role-based authorization**, and **assignment workflows**, ensuring the system behaves like a real-world academic platform rather than simple CRUD APIs.
 
-Student assignment submissions
+---
 
-Secure API communication using JWT
+## ✨ Core Responsibilities
 
-The system ensures a workflow-driven design, not just basic CRUD operations.
+- User authentication for Teachers and Students  
+- Role-based access control (RBAC)  
+- Assignment lifecycle management:
+  - Draft → Published → Completed  
+- Student assignment submissions  
+- Secure API communication using JWT  
 
-🛠️ Tech Stack
+---
 
-Node.js
+## 🛠 Tech Stack
 
-Express.js
+- Node.js  
+- Express.js  
+- MongoDB  
+- Mongoose  
+- JWT Authentication  
+- bcrypt (Password Hashing)  
+- RESTful APIs  
 
-MongoDB + Mongoose
+---
 
-JWT Authentication
+## ⚙️ Setup & Run Locally
 
-bcrypt (password hashing)
-
-RESTful APIs
-
-⚙️ Setup & Run Locally
-1️⃣ Clone the Repository
+```bash
 git clone https://github.com/your-username/assignment-workflow-portal-backend.git
 cd assignment-workflow-portal-backend
-
-2️⃣ Install Dependencies
 npm install
 
-3️⃣ Environment Variables
-
-Create a .env file in the root directory:
+Create a .env file in the root directory and add:
 
 PORT=8800
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 
 
-⚠️ Make sure MongoDB is running locally or use MongoDB Atlas.
+⚠️ Ensure MongoDB is running locally or use MongoDB Atlas.
 
-4️⃣ Start the Server
+Start the server:
+
 npm start
 
 
-or (for development)
+For development mode:
 
 npm run dev
 
 
-The backend server will run on:
-
+The backend server runs on:
 http://localhost:8800
 
-🔐 API Features
-Authentication
+```
 
-Single login endpoint for teachers and students
+## 🔐 API Features
 
-Returns JWT token + user role
+### Authentication
+- Single login endpoint for Teachers and Students  
+- Returns JWT token and user role  
+- Secure password hashing using bcrypt  
+- Role-based route protection via middleware  
 
-Role-based route protection using middleware
+### 👨‍🏫 Teacher Capabilities
+- Create assignments (Draft state)  
+- Publish assignments  
+- View student submissions  
+- Mark assignments as Completed  
 
-Teacher Capabilities
+### 👨‍🎓 Student Capabilities
+- View only Published assignments  
+- Submit one answer per assignment  
+- View submitted answers (read-only)  
 
-Create assignments (Draft state)
+---
 
-Publish assignments
+## 🧠 Assumptions & Notes
 
-View student submissions
+- Users (Teachers / Students) are pre-created or seeded  
+- Students cannot edit submissions after submitting  
+- Teachers cannot delete assignments once published  
+- Assignment submission is blocked after the due date (if implemented)  
+- All sensitive routes are protected using JWT middleware  
 
-Mark assignments as Completed
+---
 
-Student Capabilities
+## 📎 Additional Notes
 
-View only Published assignments
+- Focus is on workflow and access control, not UI  
+- APIs follow REST best practices  
+- Input validation is handled on both backend and frontend  
+- Designed to scale for analytics, notifications, and admin roles  
 
-Submit one answer per assignment
+---
 
-View submitted answers (read-only)
+## 🙋‍♂️ Author
 
-🧠 Assumptions & Notes
+**Vishal Sharma**  
+Full Stack MERN Developer  
 
-Users (teachers/students) are pre-created or seeded.
+🔗 LinkedIn: https://www.linkedin.com/in/vishalsharma2003  
 
-Students cannot edit submissions once submitted.
-
-Teachers cannot delete assignments after publishing.
-
-Assignment submission is blocked after the due date (if implemented).
-
-All sensitive routes are protected using JWT middleware.
-
-📎 Additional Notes
-
-Focus is on workflow and access control, not UI.
-
-APIs follow REST best practices.
-
-Input validation is handled both server-side and client-side.
-
+⭐ If this backend helps you, please consider giving it a star!
